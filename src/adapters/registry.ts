@@ -101,7 +101,10 @@ function createAdapter(id: SiteId): SiteAdapter {
   return adapter;
 }
 
-export const SITE_ADAPTERS: readonly SiteAdapter[] = [createAdapter('claude'), createAdapter('gemini')];
+export const SITE_ADAPTERS: readonly SiteAdapter[] = [
+  createAdapter('claude'),
+  createAdapter('gemini'),
+];
 
 export function getAdapter(url: string): SiteAdapter | undefined {
   return SITE_ADAPTERS.find((adapter) => adapter.matches(url));
