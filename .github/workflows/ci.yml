@@ -27,13 +27,12 @@ jobs:
       - run: pnpm test:coverage
       - name: Build Chrome and Firefox packages
         run: |
-          pnpm wxt build -b chrome
-          pnpm wxt build -b firefox
           pnpm wxt zip -b chrome
           pnpm wxt zip -b firefox
+          ls -la .output/
       - uses: actions/upload-artifact@v4
         with:
           name: extension-builds
-          path: .output/*.zip
+          path: .output/**/*.zip
           if-no-files-found: error
           retention-days: 14
