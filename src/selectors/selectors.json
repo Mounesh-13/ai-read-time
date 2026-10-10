@@ -1,0 +1,16 @@
+{
+  "claude": {
+    "chatContainer": "main",
+    "assistantMessage": "[data-testid=\"assistant-message\"], [data-testid=\"chat-message\"], [data-message-author-role=\"assistant\"]",
+    "messageTextRoot": "[data-testid=\"markdown-content\"], .font-claude-message, .prose",
+    "badgeAnchor": "[data-testid=\"markdown-content\"], .font-claude-message, .prose",
+    "generatingIndicator": "[data-testid*=\"stop-response\"], button[aria-label*=\"Stop response\" i], button[aria-label*=\"Stop\" i]"
+  },
+  "gemini": {
+    "chatContainer": "main",
+    "assistantMessage": "model-response, [data-test-id=\"model-response\"], [data-testid=\"model-response\"], [data-message-author-role=\"model\"]",
+    "messageTextRoot": ".markdown, .response-content, .model-response-text, message-content",
+    "badgeAnchor": ".markdown, .response-content, .model-response-text, message-content",
+    "generatingIndicator": "button[aria-label*=\"Stop\" i], button[aria-label*=\"Pause\" i], [data-is-streaming=\"true\"]"
+  }
+}

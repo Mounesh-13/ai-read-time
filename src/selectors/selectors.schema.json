@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AI Read-Time site selectors",
+  "type": "object",
+  "required": ["claude", "gemini"],
+  "additionalProperties": false,
+  "properties": {
+    "claude": { "$ref": "#/$defs/site" },
+    "gemini": { "$ref": "#/$defs/site" }
+  },
+  "$defs": {
+    "site": {
+      "type": "object",
+      "required": [
+        "chatContainer",
+        "assistantMessage",
+        "messageTextRoot",
+        "badgeAnchor",
+        "generatingIndicator"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "chatContainer": { "type": "string", "minLength": 1 },
+        "assistantMessage": { "type": "string", "minLength": 1 },
+        "messageTextRoot": { "type": "string", "minLength": 1 },
+        "badgeAnchor": { "type": "string", "minLength": 1 },
+        "generatingIndicator": { "type": "string", "minLength": 1 }
+      }
+    }
+  }
+}
