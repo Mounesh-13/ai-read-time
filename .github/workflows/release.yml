@@ -29,7 +29,13 @@ jobs:
         run: |
           pnpm wxt zip -b chrome
           pnpm wxt zip -b firefox
+          cp .output/*-chrome.zip .output/extension-chrome.zip
+          cp .output/*-firefox.zip .output/extension-firefox.zip
+          cp .output/*-sources.zip .output/extension-sources.zip
       - uses: softprops/action-gh-release@v2
         with:
           generate_release_notes: true
-          files: .output/*.zip
+          files: |
+            .output/extension-chrome.zip
+            .output/extension-firefox.zip
+            .output/extension-sources.zip

@@ -29,13 +29,16 @@ jobs:
         run: |
           pnpm wxt zip -b chrome
           pnpm wxt zip -b firefox
+          cp .output/*-chrome.zip .output/extension-chrome.zip
+          cp .output/*-firefox.zip .output/extension-firefox.zip
+          cp .output/*-sources.zip .output/extension-sources.zip
           ls -la .output/
       - uses: actions/upload-artifact@v4
         with:
           name: extension-builds
           path: |
-            .output/ai-read-time-indicator-0.1.0-chrome.zip
-            .output/ai-read-time-indicator-0.1.0-firefox.zip
-            .output/ai-read-time-indicator-0.1.0-sources.zip
+            .output/extension-chrome.zip
+            .output/extension-firefox.zip
+            .output/extension-sources.zip
           if-no-files-found: error
           retention-days: 14
