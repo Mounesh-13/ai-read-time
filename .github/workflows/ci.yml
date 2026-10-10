@@ -33,6 +33,9 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: extension-builds
-          path: .output/**/*.zip
+          path: |
+            .output/ai-read-time-indicator-0.1.0-chrome.zip
+            .output/ai-read-time-indicator-0.1.0-firefox.zip
+            .output/ai-read-time-indicator-0.1.0-sources.zip
           if-no-files-found: error
           retention-days: 14
